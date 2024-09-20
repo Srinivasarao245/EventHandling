@@ -1,0 +1,25 @@
+<!-- Display text box value in h1 on button click in React Component -->
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+     <body>
+        <div id="a1"></div>
+        <script type="text/babel">
+            var Ab = function  (){
+                var [a,setA] = React.useState('');
+                function abc (ev){ setA(ev.target.value); }
+                return ( <div>
+                            {  <div> 
+                                    <input type="text" value={a} onChange={abc} />
+                                    <button onClick={()=>alert(value)}>Click to see H1</button>
+                                    <h1>{a}</h1>
+                               </div> }
+                        </div> )
+            }
+            ReactDOM.render(<Ab/>,document.getElementById('a1'));
+        </script>
+     </body>
+</html>

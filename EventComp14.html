@@ -1,0 +1,24 @@
+<!-- Display text box value in uppercase h1 on textbox keyup in React Component -->
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+     <body>
+        <div id="a1"></div>
+        <script type="text/babel">
+            var Ab = function (){
+                var [a,setA] = React.useState('');
+                function abc(ev){setA(ev.target.value); }
+                function abcd(){setA(a.toUpperCase()); }
+                return ( <div>
+                            <input type="text" value={a} onChange={abc} />
+                            <button onClick={abcd}>Click To See alert</button>
+                            <h1>{a.toUpperCase()}</h1>
+                         </div> )
+            }
+            ReactDOM.render(<Ab/>,document.getElementById('a1'));
+        </script>
+     </body>
+</html>

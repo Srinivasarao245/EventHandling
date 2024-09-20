@@ -1,0 +1,30 @@
+<!-- Display result of two text box values in h1 on textbox on multiplication and divsion buttons in React Component -->
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+     <body>
+        <div id="a1"></div>
+        <script type="text/babel">
+            function Ab(){
+               var [a,setA] = React.useState('');
+               var [b,setB] = React.useState('');
+               var [c,setC] = React.useState('');
+               var ab1 = function (e){ setB(+e.target.value) }
+               var ab2 = function (e){ setC(+e.target.value) }
+               function abc(){ setA(b*c) }
+               function abcd(){ setA(b/c) }
+               return ( <div>
+                            <input type="text" onChange={ab1} /> <br/>
+                            <input type="text" onChange={ab2} /> <br/>
+                            <button onClick={abc}>Mult</button>
+                            <button onClick={abcd}>Div</button>
+                            <h1>{a}</h1>
+                        </div> )
+            }
+            ReactDOM.render(<Ab/>,document.getElementById('a1'));
+        </script>
+     </body>
+</html>
