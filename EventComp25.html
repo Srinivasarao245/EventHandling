@@ -14,11 +14,9 @@
     <script type="text/babel">
         var Ab = function (){
             var [a,setA] = React.useState([]);
-            var b;
-            var ab1 = (e)=>{b=(e.target.value)    
-            }
-            var abc = ()=>{setA([...a,b])
-            }
+            var [b,setB] = React.useState([]);
+            var ab1 = (e)=>{setB(e.target.value) }
+            var abc = ()=>{ setA([...a,b])  }
             return(
                 <div>
                     <input type="text" onChange={ab1}/>

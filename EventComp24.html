@@ -14,8 +14,9 @@
     <script type="text/babel">
         var Ab = function(){
             var [a,setA] = React.useState([]);
+            var [b,setB] = React.useState([]);
             var ab1 = (e)=> (a.push(e.target.value))
-            var abc = () =>{console.log(a)}    
+            var abc = () =>{console.log([...a,b])}    
             return (  
                 <div>
                     <input type="text" onChange={ab1} />
