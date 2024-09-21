@@ -1,0 +1,33 @@
+<!-- Display select box value in h1 in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function(){
+            var [a,setA] =  React.useState('');
+            var abc = (e)=>{ setA(e.target.value); }
+            return ( <div>
+                        <select onClick={abc}>
+                        <option value="https://live.staticflickr.com/4724/25039883267_5b3eaede33.jpg">India</option>    
+                        <option value="https://static01.nyt.com/images/2017/09/25/magazine/25mag-nfl1/25mag-nfl1-superJumbo.jpg">America</option>    
+                        <option value="https://i0.gmx.at/image/404/37200404,pd=1,f=size-l/alexander-van-bellen.jpg">Austrelia</option>    
+                        <option value="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/dd663815-f21d-46da-ab17-22b3112010a9.jpg">Lundon</option>    
+                        <option value="https://idsb.tmgrup.com.tr/ly/uploads/images/2020/12/02/76364.jpg">Thailand</option>    
+                        <option value="https://www.kantei.go.jp/jp/content/20150101souri_2.jpg">Japan</option>    
+                        </select> <br/> <br/>
+                        <img width='200px' src={a} />
+                     </div>
+            )}
+        ReactDOM.render(<Ab/>,document.getElementById('a1'))
+    </script>
+</body>
+</html>

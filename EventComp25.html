@@ -1,0 +1,32 @@
+<!-- Push text box value to an array display in h1 in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function (){
+            var [a,setA] = React.useState([]);
+            var b;
+            var ab1 = (e)=>{b=(e.target.value)    
+            }
+            var abc = ()=>{setA([...a,b])
+            }
+            return(
+                <div>
+                    <input type="text" onChange={ab1}/>
+                    <button onClick={abc}>To see on h1</button>
+                    <h1>{a}</h1>    
+                </div>
+            ) }
+        ReactDOM.render(<Ab/>,document.getElementById('a1'))
+    </script>
+</body>
+</html>

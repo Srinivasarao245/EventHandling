@@ -1,0 +1,27 @@
+<!-- Display radio button value on check in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function(){
+            var [a,setA] = React.useState('')
+            var ab1 = (e)=>{setA(e.target.value); }
+            return ( <div>
+                        <input type="radio" name='ac' value="India" onClick={ab1} /> IND
+                        <input type="radio" name='ac' value="Unites States of America" onClick={ab1} /> USA
+                        <h1>{a}</h1>
+                     </div> )
+        }
+        ReactDOM.render(<Ab/>,document.getElementById('a1'));
+    </script>
+</body>
+</html>
