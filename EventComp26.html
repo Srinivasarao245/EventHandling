@@ -1,0 +1,34 @@
+<!-- Push text box value to an array display in listitems in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function (){
+            var a;
+            var [b,setB] = React.useState([]);
+            var ab = ((e)=>{a=(e.target.value); })
+            var abc = (()=>{
+                b.push(a);
+                setB([...b])
+            }) 
+                     
+            return ( <div>
+                       <div>
+                            <input type="text"  onChange={(e)=>{ab(e)}} />
+                            <button onClick={()=>{abc()}}>Click to Push value</button> 
+                       </div> 
+                       <ul>{b.map((a,i)=>( <li key={i}>{a}</li> ))}</ul>
+                     </div> ); }
+        ReactDOM.render(<Ab/>,document.getElementById('a1'))
+    </script>
+</body>
+</html>

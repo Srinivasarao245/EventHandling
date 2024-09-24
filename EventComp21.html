@@ -13,26 +13,28 @@
     <div id="a1"></div>
     <script type="text/babel">
         var Ab = function(){
-        var [a,setA] = React.useState([]);
-        var abc = (e)=>{ a.push(e.target.value);
-            setA([...a])
-         }
+        var [ar,setAr] = React.useState([]);
+        var abc = (e)=>{
+            if(e.target.checked === false){ 
+                var br = ar.filter((b)=> b!==e.target.value );
+                setAr(br);  }
+                else{setAr([...ar,e.target.value]);}
+           }
             return (  <div>
-                        <input type="checkbox" onClick={abc} value="Java" name='ac' />:Java  <br/>
-                        <input type="checkbox" onClick={abc} value='ReactJS' name='ac' />:ReactJS <br/>
-                        <input type="checkbox" onClick={abc} value='Html' name='ac' />:Html <br/>
-                        <input type="checkbox" onClick={abc} value='Css' name='ac' />:Css <br/>
-                        <input type="checkbox" onClick={abc} value='Angular' name='ac' />:Angular <br/>
-                        <input type="checkbox" onClick={abc} value='NodeJS' name='ac' />:NodeJS <br/>
-                        <input type="checkbox" onClick={abc} value='Express' name='ac' />:Express <br/>
-                        <input type="checkbox" onClick={abc} value='MongoDB' name='ac' />:MongoDB <br/>
-                        <input type="checkbox" onClick={abc} value='Mongoose' name='ac' />:Mongoose <br/>
-                        <input type="checkbox" onClick={abc} value='MySQL' name='ac' />:MySQL <br/>
-                        <h1>{a}</h1>
+                        <input type="checkbox" onChange={abc} value="Java" name='ac' />:Java  <br/>
+                        <input type="checkbox" onChange={abc} value='ReactJS' name='ac' />:ReactJS <br/>
+                        <input type="checkbox" onChange={abc} value='Html' name='ac' />:Html <br/>
+                        <input type="checkbox" onChange={abc} value='Css' name='ac' />:Css <br/>
+                        <input type="checkbox" onChange={abc} value='Angular' name='ac' />:Angular <br/>
+                        <input type="checkbox" onChange={abc} value='NodeJS' name='ac' />:NodeJS <br/>
+                        <input type="checkbox" onChange={abc} value='Express' name='ac' />:Express <br/>
+                        <input type="checkbox" onChange={abc} value='MongoDB' name='ac' />:MongoDB <br/>
+                        <input type="checkbox" onChange={abc} value='Mongoose' name='ac' />:Mongoose <br/>
+                        <input type="checkbox" onChange={abc} value='MySQL' name='ac' />:MySQL <br/>
+                        <h1>{ar}</h1>
                       </div>
             )}
         ReactDOM.render(<Ab/>,document.getElementById('a1'))
     </script>
 </body>
 </html>
-<!-- pending -->

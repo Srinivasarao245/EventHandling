@@ -1,0 +1,30 @@
+<!-- Implement like dislike app in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function (){
+            var [a,setA] = React.useState(0);
+            var [b,setB] = React.useState(0);
+            var ab1 = ()=>{ setA (a+1) }
+            var ab2 = ()=>{ setB (b+1) }
+            return ( <div>
+                        <h1>Like:{a}</h1> 
+                        <h1>Dislike:{b}</h1> 
+                        <button onClick={()=>{ab1()}}>Like</button>&nbsp;&nbsp;
+                        <button onClick={()=>{ab2()}}>DisLike</button>
+                     </div> )
+        }
+        ReactDOM.render(<Ab />,document.getElementById('a1'))
+    </script>
+</body>
+</html>

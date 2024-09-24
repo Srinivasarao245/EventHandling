@@ -1,4 +1,4 @@
-<!-- Push text box value to an array console the array in React Component -->
+<!-- Implement rating app in React Component -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +13,18 @@
     <div id="a1"></div>
     <script type="text/babel">
         var Ab = function(){
-            var [a,setA] = React.useState();
-            var [b,setB] = React.useState([]);
-            var ab1 = (e)=> (setA(e.target.value))
-            var abc = () =>{
-                setB([...b,a]) ;
-                console.log(b)
-            }    
-            return (  
-                <div>
-                    <input type="text" onChange={ab1} />
-                    <button onClick={abc}>Toview on Console</button>
-                </div>
-            )  }
+            const [a,setA] = React.useState(0);
+            function ra(r){setA(r);}
+            const abc =[];
+            for(let i =1 ;i<=5;i++){ 
+                abc.push( <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={()=>ra(i)}>{ a>=i ? '★' : '☆' }</span> )
+            }
+            return ( <div>
+                        <h1>Rating: <div>{a}/5</div> </h1>
+                        {abc}
+                     </div> );
+        }
         ReactDOM.render(<Ab/>,document.getElementById('a1'))
     </script>
 </body>
 </html>
-<!-- Pending -->

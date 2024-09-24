@@ -1,4 +1,4 @@
-<!-- Push text box value to an array console the array in React Component -->
+<!-- Implement counter application in React Component -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +13,16 @@
     <div id="a1"></div>
     <script type="text/babel">
         var Ab = function(){
-            var [a,setA] = React.useState();
-            var [b,setB] = React.useState([]);
-            var ab1 = (e)=> (setA(e.target.value))
-            var abc = () =>{
-                setB([...b,a]) ;
-                console.log(b)
-            }    
-            return (  
-                <div>
-                    <input type="text" onChange={ab1} />
-                    <button onClick={abc}>Toview on Console</button>
-                </div>
-            )  }
+            var [a,setA] = React.useState(50);
+            var ab1 = () =>{ setA(a+1); }
+            var ab2 = () =>{ setA(a-1); }
+            return ( <div>
+                        <h1>{a}</h1>
+                        <button onClick={ab1}>Increment</button>&nbsp;&nbsp;
+                        <button onClick={ab2}>Decrement</button>
+                     </div> )
+        }
         ReactDOM.render(<Ab/>,document.getElementById('a1'))
     </script>
 </body>
 </html>
-<!-- Pending -->
