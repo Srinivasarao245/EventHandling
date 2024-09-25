@@ -1,4 +1,4 @@
-<!-- Bindevent handler with arguments as index for list item generated from array in React Component -->
+<!-- Bindevent handler with arguments as values for list item generated from array in React Component -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +15,9 @@
         var Ab = function(){
             var [ar,setAr] = React.useState(['srinivas','praveen','farooq','karthik','rushikesk','sai','ayyappa'])
             return ( <div>
-                        <ul>{ar.map((a,i)=>{ return(( <li onClick={()=>alert(i)}>{a}</li> )) }) }</ul>
+                        <ul>{ar.map((a,i)=>{ return(( <li onClick={()=>alert(a)}>{a}</li> )) }) }</ul>
                     </div> )
-        }        
+        }
         ReactDOM.render(<Ab/>,document.getElementById('a1'))
     </script>
 </body>

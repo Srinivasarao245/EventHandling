@@ -1,0 +1,59 @@
+<!-- Display values in h1 in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function(){
+            var [ar,setAr] = React.useState([
+                { id:1,
+                  firstname:"Srinivasarao",
+                  lastname:"Bagam",
+                  age:25,
+                  Gender:'male'
+                },
+                { id:1,
+                  firstname:"Farooq",
+                  lastname:"Shaik",
+                  age:33,
+                  Gender:'male'
+                },
+                { id:1,
+                  firstname:"Shalini",
+                  lastname:"Raj",
+                  age:35,
+                  Gender:'female'
+                },
+                { id:1,
+                  firstname:"Karthik",
+                  lastname:"Vemuri",
+                  age:22,
+                  Gender:'male'
+                },
+                { id:1,
+                  firstname:"Sirisha",
+                  lastname:"Aatukur",
+                  age:22,
+                  Gender:'female'
+                },
+            ]);
+            var b = (i,s) =>{document.getElementById('a3').innerHTML = s.lastname + "is at index" + i}
+            return ( <div> <ul>
+                        {ar.map((s,i)=>{return ( 
+                            <li>{s.firstname}
+                                <button onClick={()=>b(i,s)}>See</button>
+                                </li> ) })}
+                     </ul> <h1 id='a3'></h1>
+                     </div> ) }        
+        ReactDOM.render(<Ab/>,document.getElementById('a1'))
+    </script>
+</body>
+</html>

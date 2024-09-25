@@ -1,4 +1,4 @@
-<!-- Bindevent handler with arguments as index for list item generated from array in React Component -->
+<!-- Display name in h1 id on h2 in React Component -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +8,22 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="EventComp40.js"></script>
 </head>
 <body>
     <div id="a1"></div>
     <script type="text/babel">
-        var Ab = function(){
-            var [ar,setAr] = React.useState(['srinivas','praveen','farooq','karthik','rushikesk','sai','ayyappa'])
-            return ( <div>
-                        <ul>{ar.map((a,i)=>{ return(( <li onClick={()=>alert(i)}>{a}</li> )) }) }</ul>
-                    </div> )
-        }        
+            var Ab = function(){
+                var [ar,setAr] = React.useState('');
+                var [br,setBr] = React.useState('');
+               var cr = (i,name) =>{br(i);ar(name);};
+               return( <div> <ul>{players.map((players,i)=>(
+                <li key={i} onClick={()=>cr(i,players.name)}>{players.name}</li>
+               ))}</ul> 
+               <h1>{ar}</h1>
+               <h1>{br}</h1>
+               </div> )
+            }
         ReactDOM.render(<Ab/>,document.getElementById('a1'))
     </script>
 </body>
