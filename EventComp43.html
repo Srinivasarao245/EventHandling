@@ -1,0 +1,37 @@
+<!-- Display substraction of two text box values in h1 on textbox on button click in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function (){
+            var [a,setA] = React.useState('');
+            var [b,setB] = React.useState('');
+            var [c,setC] = React.useState('');
+            var ab1 = (e)=>{setA(+e.target.value);}
+            var ab2 = (e)=>{setB(+e.target.value);}
+            var ab3 = (()=>{setC(a - b); })
+            var ab4 = (()=>{setC(a * b); })
+            var ab5 = (()=>{setC(a / b); })
+            var ab6 = (()=>{setC(a + b); })
+            return ( <div>
+                        <input type="text" onChange={(e)=>{ab1(e)}} />  <br/> 
+                        <input type="text" onChange={(e)=>{ab2(e)}}  />   <br/> 
+                        <button onClick={()=>{ab6()}}>Addition</button> 
+                        <button onClick={()=>{ab3()}}>Substract</button> <br/>
+                        <button onClick={()=>{ab4()}}>Multiple</button> 
+                        <button onClick={()=>{ab5()}}>Divison</button> 
+                        <h1>{c}</h1>
+                     </div> )   }
+        ReactDOM.render(<Ab/>,document.getElementById('a1'))
+    </script>
+</body>
+</html>

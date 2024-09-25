@@ -1,0 +1,37 @@
+<!-- Display name in h1 id in h2 on button beside student name in React Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="EventComp40.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <script type="text/babel">
+        var Ab = function(){
+            var [ar,setAr] = React.useState();
+            var [br,setBr] = React.useState();
+            var [cr,setCr] = React.useState();
+            var [dr,setDr] = React.useState();
+            var [er,setEr] = React.useState();
+            var ab1 = (i,name,gender,country,image)=>{
+                setAr(i);setBr(name);setCr(gender);setDr(country);setEr(image); }
+            return ( <div> <ul>
+                     {players.map((player,i)=>( 
+                        <li onClick={()=>ab1(i,player.name,player.gender,player.country,player.image)}>{player.name}</li> ))}
+                     </ul>
+                        <h1>{ar}</h1> 
+                        <h1>{br}</h1> 
+                        <h1>{cr}</h1> 
+                        <h1>{dr}</h1>
+                        <img width="250px" src={er}  /> 
+                     </div> ) }
+        ReactDOM.render(<Ab/>,document.getElementById('a1'))
+    </script>
+</body>
+</html>

@@ -15,15 +15,17 @@
     <script type="text/babel">
             var Ab = function(){
                 var [ar,setAr] = React.useState('');
-                var [br,setBr] = React.useState('');
-               var cr = (i,name) =>{br(i);ar(name);};
-               return( <div> <ul>{players.map((players,i)=>(
-                <li key={i} onClick={()=>cr(i,players.name)}>{players.name}</li>
-               ))}</ul> 
-               <h1>{ar}</h1>
-               <h1>{br}</h1>
-               </div> )
-            }
+                var [br,setBr] = React.useState();
+                var ab1 = (i,name)=>{ 
+                        setBr(i);
+                        setAr(name);}
+                return (<div> <ul>
+                            {players.map((player,i)=>( 
+                                <li key={i} onClick={()=>{ab1(i,player.name)}}>{player.name}</li> ))}
+                              </ul>
+                            <h1>{ar}</h1>
+                            <h1>{br}</h1>
+                        </div>)  }
         ReactDOM.render(<Ab/>,document.getElementById('a1'))
     </script>
 </body>
